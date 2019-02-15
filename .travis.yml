@@ -6,17 +6,22 @@ jdk:
 services:
   - docker
 
-before_install:
-  - ./gradlew clean build
-  - docker build -t aphv/demo-review .
-  - docker run -t -d --name aphv-demo-review -p 8181:8080 --restart=always -ti aphv/demo-review
-  - docker ps -a
-
 addons:
   sonarcloud:
     organization: "gauket-github"
     token:
       secure: ${SONAR_TOKEN}
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+
+before_install:
+    - ./gradlew clean build
+    - docker build -t aphv/demo-review .
+    - docker run -t -d --name aphv-demo-review -p 8080:8080 --restart=always -ti aphv/demo-review
+    - docker ps -a
 
 script:
   - ./gradlew sonarqube
