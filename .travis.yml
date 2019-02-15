@@ -12,9 +12,9 @@ before_install:
   - docker run -t -d --name aphv-demo-review -p 8181:8080 --restart=always -ti aphv/demo-review
   - docker ps -a
 
+addons:
+  sonarcloud:
+    organization: "gauket-github"
+
 script:
-  - ./gradlew sonarqube \
-    -Dsonar.projectKey=GaukeT_demo-review \
-    -Dsonar.organization=gauket-github \
-    -Dsonar.host.url=https://sonarcloud.io \
-    -Dsonar.login=$SONAR_TOKEN
+  - sonar-scanner
