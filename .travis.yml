@@ -13,6 +13,8 @@ before_install:
   - docker ps -a
 
 script:
+  - echo $SONAR_TOKEN
+  - echo ${SONAR_TOKEN}
   - ./gradlew sonarqube \
       -Dsonar.projectKey=GaukeT_demo-review \
       -Dsonar.organization=gauket-github \
