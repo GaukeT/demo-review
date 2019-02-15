@@ -4,6 +4,8 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'war'
+apply plugin: 'maven'
 
 group = 'nl.gauket'
 version = '0.0.1-SNAPSHOT'
