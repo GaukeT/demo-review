@@ -5,3 +5,8 @@ jdk:
 
 services:
   - docker
+
+before_install:
+  - docker build -t aphv/demo-review .
+  - docker run -t -d --name aphv-demo-review -p 8181:8080 --restart=always -ti aphv/demo-review
+  - docker ps -a
