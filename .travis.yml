@@ -1,3 +1,4 @@
+dist: xenial
 language: java
 
 jdk:
@@ -25,4 +26,3 @@ before_install:
 
 script:
   - ./gradlew sonarqube
-  - ant test
