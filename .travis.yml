@@ -25,4 +25,5 @@ before_install:
     - docker ps -a
 
 script:
+  - ./gradlew jacocoTestReport
   - ./gradlew sonarqube
