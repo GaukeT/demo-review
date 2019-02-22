@@ -25,14 +25,14 @@ public class PersonControllerTest {
     private MockMvc mockMvc;
 
     @Test
-    public void shouldReturnPersons() throws Exception {
+    public void shouldReturnAllPersons() throws Exception {
         this.mockMvc.perform(get(PERSONS_ENDPOINT))
                 .andDo(print())
                 .andExpect(status().isOk());
     }
 
     @Test
-    public void shouldReturnSpecificPersons() throws Exception {
+    public void shouldReturnSpecificPerson() throws Exception {
         this.mockMvc.perform(get(SPECIFIC_PERSON_ENDPOINT + "Foo"))
                 .andDo(print())
                 .andExpect(status().isOk());
