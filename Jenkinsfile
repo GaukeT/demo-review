@@ -1,9 +1,9 @@
 pipeline {
   agent any
   stages {
-    stage('Hello') {
+    stage('Run') {
       parallel {
-        stage('Hello') {
+        stage('Hello World') {
           agent any
           steps {
             echo 'Hello World'
@@ -19,11 +19,11 @@ pipeline {
             sh 'docker stop aphv-demo-review'
           }
         }
-        stage('test') {
+        stage('JUnit test') {
           agent any
           steps {
             sh './gradlew jacocoTestReport'
-            junit(healthScaleFactor: 2, testResults: '**/build/test-reports/*.xml')
+            junit(healthScaleFactor: 2, testResults: 'target/jacoco.exec')
           }
         }
       }
