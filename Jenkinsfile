@@ -19,6 +19,13 @@ pipeline {
             sh 'docker stop aphv-demo-review'
           }
         }
+        stage('test') {
+          agent any
+          steps {
+            sh './gradlew jacocoTestReport'
+            junit(healthScaleFactor: 2, testResults: '**/build/test-reports/*.xml')
+          }
+        }
       }
     }
   }
