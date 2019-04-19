@@ -17,7 +17,7 @@ pipeline {
             sh 'docker run -t -d --name aphv-demo-review -p 8080:8080 --restart=always -ti aphv/demo-review'
             sh 'docker ps -a'
             sh 'docker stop aphv-demo-review'
-            sh 'docker rm aphv-demo-review0'
+            sh 'docker rm aphv-demo-review'
           }
         }
       }
