@@ -24,7 +24,7 @@ pipeline {
     }
     stage('SonarQube Analysis') {
       steps {
-        sh '/home/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/sonarqubescanner/bin/sonar-scanner -Dsonar.host.url=http://localhost:9000 -Dsonar.projectKey=nl.gauket.demoreview -Dsonar.login=1481429e863f8c1fac142a91a2f21de7184ca9e4'
+        sh './gradlew sonarqube -Dsonar.host.url=http://localhost:9000 -Dsonar.projectKey=nl.gauket.demoreview -Dsonar.login=1481429e863f8c1fac142a91a2f21de7184ca9e4'
       }
     }
   }
