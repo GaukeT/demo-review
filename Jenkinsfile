@@ -19,7 +19,9 @@ pipeline {
     }
     stage('SonarQube Analysis') {
       steps {
-        sh './gradlew sonarqube -Dsonar.projectKey="GaukeT_demo-review" -Dsonar.organization="gauket-github" -Dsonar.host.url="https://sonarcloud.io" -Dsonar.login="dde7a6d2010646eff547ce2f5eb367976b57b587"'
+        withCredentials([string(credentialsId: '35e7ba71-5499-41f2-bcf2-4ebf4854ea2e', variable: 'TOKEN')]) {
+            sh './gradlew sonarqube -Dsonar.projectKey="GaukeT_demo-review" -Dsonar.organization="gauket-github" -Dsonar.host.url="https://sonarcloud.io" -Dsonar.login=$TOKEN'
+        }
       }
     }
   }
