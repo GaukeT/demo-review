@@ -1,4 +1,3 @@
-#!groovy
 pipeline {
   agent any
   stages {
@@ -25,11 +24,7 @@ pipeline {
     }
     stage('SonarQube Analysis') {
       steps {
-        sh './gradlew sonarqube \n' +
-                '  -Dsonar.projectKey=GaukeT_demo-review \n' +
-                '  -Dsonar.organization=gauket-github \n' +
-                '  -Dsonar.host.url=https://sonarcloud.io \n' +
-                '  -Dsonar.login=dde7a6d2010646eff547ce2f5eb367976b57b587'
+        sh './gradlew sonarqube -Dsonar.projectKey="GaukeT_demo-review" -Dsonar.organization="gauket-github" -Dsonar.host.url="https://sonarcloud.io" -Dsonar.login="dde7a6d2010646eff547ce2f5eb367976b57b587"'
       }
     }
   }
