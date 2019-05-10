@@ -1,6 +1,7 @@
 #!groovy
-// TODO: implement library
-// @Library('github.com/GaukeT/jenkins-common')
+@Library('github.com/GaukeT/jenkins-common')
+
+def app = 'demo-review'
 
 pipeline {
   agent any
