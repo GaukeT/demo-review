@@ -1,7 +1,7 @@
-#!groovy
+//#!groovy
 @Library('github.com/GaukeT/jenkins-common')
 
-node {
+pipeline {
   agent any
   stages {
     stage('Docker') {
