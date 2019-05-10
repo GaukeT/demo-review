@@ -22,8 +22,10 @@ pipeline {
       }
     }
     stage('Update version') {
-      // TODO: implement method from library
-      // updateVersion()
+      steps {
+        // TODO: implement method from library
+        // updateVersion()
+      }
     }
   }
 }
