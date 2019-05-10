@@ -1,3 +1,6 @@
+#!groovy
+@Library('github.com/GaukeT/jenkins-common')
+
 pipeline {
   agent any
   stages {
@@ -17,12 +20,8 @@ pipeline {
         sh './gradlew jacocoTestReport'
       }
     }
-    stage('SonarQube Analysis') {
-      steps {
-        withCredentials([string(credentialsId: '35e7ba71-5499-41f2-bcf2-4ebf4854ea2e', variable: 'TOKEN')]) {
-            sh './gradlew sonarqube -Dsonar.projectKey="GaukeT_demo-review" -Dsonar.organization="gauket-github" -Dsonar.host.url="https://sonarcloud.io" -Dsonar.login=$TOKEN'
-        }
-      }
+    stage('Update version') {
+      updateVersion()
     }
   }
 }
