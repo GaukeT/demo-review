@@ -23,6 +23,7 @@ pipeline {
     }
     stage('Update version') {
       steps {
+        sh 'echo version_update'
         // TODO: implement method from library
         // updateVersion()
       }
