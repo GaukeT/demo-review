@@ -1,5 +1,6 @@
-//#!groovy
-@Library('github.com/GaukeT/jenkins-common')
+#!groovy
+// TODO: implement library
+// @Library('github.com/GaukeT/jenkins-common')
 
 pipeline {
   agent any
@@ -21,7 +22,8 @@ pipeline {
       }
     }
     stage('Update version') {
-      updateVersion()
+      // TODO: implement method from library
+      // updateVersion()
     }
   }
 }
