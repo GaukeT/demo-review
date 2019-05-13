@@ -1,3 +1,8 @@
+#!groovy
+@Library('github.com/GaukeT/jenkins-common')
+
+def app = 'demo-review'
+
 pipeline {
   agent any
   stages {
