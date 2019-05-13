@@ -16,5 +16,5 @@ The configuration for [Travis CI](https://travis-ci.org/) is defined in the [.tr
 - [Spring](https://spring.io/)
 - [Travis CI](https://travis-ci.org/)
 - [Docker](https://www.docker.com/)
-- [Sonar](sonarcloud.io)
+- [Sonar](https://sonarcloud.io)
 
