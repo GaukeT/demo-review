@@ -7,5 +7,10 @@ pipeline {
         echo 'Hello World'
       }
     }
+    stage('Update version') {
+      steps {
+        updateVersion()
+      }
+    }
   }
 } 
