@@ -35,7 +35,8 @@ pipeline {
     stage('vars') {
       steps {
         println(env.BRANCH_NAME)
-        println(common.map1[env.BRANCH_NAME])
+        println(common.map1[env.BRANCH_NAME].env)
+        println(common.map1[env.BRANCH_NAME].snapshot)
       }
     }
 
