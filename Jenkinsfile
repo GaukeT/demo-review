@@ -1,5 +1,7 @@
 #!groovy
-@Library('github.com/GaukeT/jenkins-common')_
+@Library('github.com/GaukeT/jenkins-common')
+
+import nl.gauket.GlobalConfig
 
 def app = 'demo-review'
 
@@ -11,6 +13,16 @@ pipeline {
       steps {
         echo 'Hello World'
       }
+    }
+    stage('Global config') {
+        // store Global config in local variable
+        // https://github.com/GaukeT/jenkins-common/blob/master/src/nl/gauket/GlobalConfig.groovy
+        def libraryVersion = GlobalConfig.library_version
+        def environment = GlobalConfig.config[env.BRANCH_NAME]
+
+        // print config
+        echo "Library verson: ${libraryVersion}"
+        echo "Environment: ${environment}"
     }
     stage('Update version') {
       steps {
