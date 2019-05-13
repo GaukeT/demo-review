@@ -1,6 +1,8 @@
 #!groovy
 @Library('github.com/GaukeT/jenkins-common')
 
+import nl.gauket.GlobalVars
+
 def app = 'demo-review'
 
 pipeline {
@@ -34,6 +36,9 @@ pipeline {
 
     stage('vars') {
       steps {
+
+        println GlobalVars.library_version
+
         println "working currunt on branch: ${env.BRANCH_NAME}"
         println "env: ${common.config[env.BRANCH_NAME].env}"
         println "snapshot: ${common.config[env.BRANCH_NAME].snapshot}"
