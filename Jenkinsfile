@@ -14,6 +14,8 @@ pipeline {
     }
     stage('Update version') {
       steps {
+        // method of the imported library is used here. 
+        // https://github.com/GaukeT/jenkins-common/blob/master/vars/updateVersion.groovy
         updateVersion()
       }
     }
