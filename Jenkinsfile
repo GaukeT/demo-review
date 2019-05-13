@@ -16,14 +16,10 @@ pipeline {
     }
     stage('Global config') {
         steps {
-            // store Global config in local variable
+            // print variables from the shared library
             // https://github.com/GaukeT/jenkins-common/blob/master/src/nl/gauket/GlobalConfig.groovy
-            def libraryVersion = GlobalConfig.library_version
-            def environment = GlobalConfig.config[env.BRANCH_NAME]
-
-            // print config
-            echo "Library verson: ${libraryVersion}"
-            echo "Environment: ${environment}"
+            echo "Library verson: ${GlobalConfig.library_version}"
+            echo "Environment: ${GlobalConfig.config[env.BRANCH_NAME]}"
         }
     }
     stage('Update version') {
