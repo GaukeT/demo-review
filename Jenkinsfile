@@ -37,7 +37,7 @@ pipeline {
     stage('vars') {
       steps {
 
-        println GlobalVars.library_version
+        println "library version: ${GlobalVars.library_version}"
 
         println "working currunt on branch: ${env.BRANCH_NAME}"
         println "env: ${common.config[env.BRANCH_NAME].env}"
