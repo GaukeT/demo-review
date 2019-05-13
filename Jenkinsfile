@@ -31,5 +31,10 @@ pipeline {
         updateVersion()
       }
     }
+
+    stage('vars') {
+      println(common.map1[env.BRANCH_NAME])
+    }
+
   }
 }
