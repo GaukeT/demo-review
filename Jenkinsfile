@@ -15,14 +15,16 @@ pipeline {
       }
     }
     stage('Global config') {
-        // store Global config in local variable
-        // https://github.com/GaukeT/jenkins-common/blob/master/src/nl/gauket/GlobalConfig.groovy
-        def libraryVersion = GlobalConfig.library_version
-        def environment = GlobalConfig.config[env.BRANCH_NAME]
+        steps {
+            // store Global config in local variable
+            // https://github.com/GaukeT/jenkins-common/blob/master/src/nl/gauket/GlobalConfig.groovy
+            def libraryVersion = GlobalConfig.library_version
+            def environment = GlobalConfig.config[env.BRANCH_NAME]
 
-        // print config
-        echo "Library verson: ${libraryVersion}"
-        echo "Environment: ${environment}"
+            // print config
+            echo "Library verson: ${libraryVersion}"
+            echo "Environment: ${environment}"
+        }
     }
     stage('Update version') {
       steps {
