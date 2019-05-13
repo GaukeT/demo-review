@@ -35,8 +35,8 @@ pipeline {
     stage('vars') {
       steps {
         println "working currunt on branch: ${env.BRANCH_NAME}"
-        println "env: ${common.config[env.BRANCH_NAME].env}"
-        println "snapshot: ${common.config[env.BRANCH_NAME].snapshot}"
+        println "env: ${config[env.BRANCH_NAME].env}"
+        println "snapshot: ${config[env.BRANCH_NAME].snapshot}"
       }
     }
 
