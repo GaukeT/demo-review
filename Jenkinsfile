@@ -1,23 +1,21 @@
+#!groovy
+@Library('github.com/GaukeT/jenkins-common')_
+
+def app = 'demo-review'
+
 pipeline {
   agent any
   stages {
     stage('Hello') {
-      parallel {
-        stage('Hello') {
-          agent any
-          steps {
-            echo 'Hello World'
-          }
-        }
-        stage('Hi') {
-          steps {
-            echo 'Hi'
-          }
-        }
+      agent any
+      steps {
+        echo 'Hello World'
       }
     }
     stage('Update version') {
       steps {
+        // method of the imported library is used here.
+        // https://github.com/GaukeT/jenkins-common/blob/master/vars/updateVersion.groovy
         updateVersion()
       }
     }
