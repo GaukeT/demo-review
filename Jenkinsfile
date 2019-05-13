@@ -33,7 +33,9 @@ pipeline {
     }
 
     stage('vars') {
-      println(common.map1[env.BRANCH_NAME])
+      steps {
+        println(common.map1[env.BRANCH_NAME])
+      }
     }
 
   }
