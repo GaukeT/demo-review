@@ -41,6 +41,12 @@ Sidebars contain aside text and are subject to normal substitutions.
 
 ==== Third level heading
 
+.Lamp class
+[source,java]
+----
+include::Source.java[]
+----
+
 [#id-for-listing-block]
 .Listing block title
 ----
@@ -61,6 +67,27 @@ Listing block content is commonly used to preserve code input.
 |Column 2, row 2
 |===
 
+.diagram
+[ditaa]
+....
+                   +-------------+
+                   | Asciidoctor |-------+
+                   |   diagram   |       |
+                   +-------------+       | PNG out
+                       ^                 |
+                       | ditaa in        |
+                       |                 v
+ +--------+   +--------+----+    /---------------\
+ |        | --+ Asciidoctor +--> |               |
+ |  Text  |   +-------------+    |   Beautiful   |
+ |Document|   |   !magic!   |    |    Output     |
+ |     {d}|   |             |    |               |
+ +---+----+   +-------------+    \---------------/
+     :                                   ^
+     |          Lots of work             |
+     +-----------------------------------+
+....
+
 ====== Fifth level heading
 
 [quote, firstname lastname, movie title]
@@ -78,6 +105,14 @@ ____
 == First level heading
 
 TIP: There are five admonition labels: Tip, Note, Important, Caution and Warning.
+
+NOTE: Info
+
+IMPORTANT: Important
+
+CAUTION: Caution
+
+WARNING: Warning
 
 // I am a comment and won't be rendered.
 
