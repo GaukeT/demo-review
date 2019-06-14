@@ -1,9 +1,0 @@
-== Headline
-
-first paragraph
-
-second paragraph
-
-=== second level headline
-
-a link: https://docs-as-co.de[docs-as-co.de]
