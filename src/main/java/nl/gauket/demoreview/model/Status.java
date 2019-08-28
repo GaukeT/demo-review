@@ -1,21 +1,21 @@
 package nl.gauket.demoreview.model;
 
 public class Status {
-    String status;
+    private String value;
 
     public Status() {
-        status= "200 OK";
+        this.value = "200 OK";
     }
 
-    public Status(String status) {
-        this.status = status;
+    public Status(String value) {
+        this.value = value;
     }
 
-    public String getStatus() {
-        return status;
+    public String getValue() {
+        return value;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setValue(String value) {
+        this.value = value;
     }
 }
