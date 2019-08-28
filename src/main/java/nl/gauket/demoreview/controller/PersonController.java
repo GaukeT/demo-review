@@ -1,6 +1,7 @@
 package nl.gauket.demoreview.controller;
 
 import nl.gauket.demoreview.model.Person;
+import nl.gauket.demoreview.model.Status;
 import nl.gauket.demoreview.service.PersonService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,5 +29,10 @@ public class PersonController {
     public Person getPerson(@PathVariable("name") String name) {
         logger.info("return a specific person");
         return personService.getOnePerson(name);
+    }
+
+    @GetMapping(path = "/status")
+    public Status getStatus() {
+        return personService.getStatus();
     }
 }

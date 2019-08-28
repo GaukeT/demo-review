@@ -1,6 +1,7 @@
 package nl.gauket.demoreview.service;
 
 import nl.gauket.demoreview.model.Person;
+import nl.gauket.demoreview.model.Status;
 import nl.gauket.demoreview.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,5 +28,9 @@ public class PersonService {
                 .stream()
                 .filter(person -> name.equalsIgnoreCase(person.getName()))
                 .findAny().orElse(null);
+    }
+
+    public Status getStatus() {
+        return personRepository.getStatus();
     }
 }

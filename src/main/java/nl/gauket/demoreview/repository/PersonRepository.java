@@ -1,6 +1,7 @@
 package nl.gauket.demoreview.repository;
 
 import nl.gauket.demoreview.model.Person;
+import nl.gauket.demoreview.model.Status;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -23,5 +24,9 @@ public class PersonRepository {
     public List<Person> getAllPersons() {
         logger.info("return all persons");
         return persons;
+    }
+
+    public Status getStatus() {
+        return new Status();
     }
 }
